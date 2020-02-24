@@ -6,18 +6,9 @@ import { WatchlistPageComponent } from "./watchlist-page/watchlist-page.componen
 
 const routes: Routes = [
   { path: "", redirectTo: "/search-criteria", pathMatch: "full" },
-  { path: "**", redirectTo: "/search-criteria", pathMatch: "full" },
-  {
-    path: "search-criteria",
-    component: SearchCriteriaComponent,
-    pathMatch: "full"
-  },
-  { path: "movie-list", component: MovieListComponent, pathMatch: "full" },
-  {
-    path: "watchlist-page",
-    component: WatchlistPageComponent,
-    pathMatch: "full"
-  }
+  { path: "movie-list", component: MovieListComponent },
+  { path: "watchlist-page", component: WatchlistPageComponent },
+  { path: "**", component: SearchCriteriaComponent }
 ];
 
 @NgModule({
