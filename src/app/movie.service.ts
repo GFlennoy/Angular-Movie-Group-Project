@@ -35,6 +35,9 @@ export class MovieService {
     if (queryParams.rating) {
       parameters.vote_average = queryParams.rating;
     }
+    if (queryParams.genre) {
+      parameters.with_genres = queryParams.genre;
+    }
     return this.http.get("https://api.themoviedb.org/3/discover/movie?", {
       params: parameters
     });

@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class SearchCriteriaComponent implements OnInit {
   movies: any;
+  genres: any;
   constructor(
     private service: MovieService,
     private router: Router,
@@ -17,6 +18,11 @@ export class SearchCriteriaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.service.getGenres().subscribe(response => {
+      this.genres = response["genres"];
+      console.log(response);
+    });
+
     this.route.queryParams.subscribe(response => {
       if (response) {
         this.service.getData(response).subscribe(response => {
@@ -38,6 +44,9 @@ export class SearchCriteriaComponent implements OnInit {
     }
     if (form.value.rating) {
       parameters.rating = form.value.rating;
+    }
+    if (form.value.genre) {
+      parameters.genre = form.value.genre;
     }
     this.router.navigate(["search-criteria"], { queryParams: parameters });
   }
