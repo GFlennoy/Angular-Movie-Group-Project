@@ -1,6 +1,6 @@
 <app-header></app-header>
 <h2>Search by:</h2>
-<form #addForm="ngForm" (ngSubmit)="searchMoviesBy(addForm)">
+<form #addForm="ngForm" (ngSubmit)="searchMovies(addForm)">
   <label for="genre">Genre</label>
   <select name="genre" id="genre" ngModel>
     <option value="">Choose a genre</option>
@@ -38,4 +38,4 @@
   <input type="number" name="year" id="year" ngModel />
   <button>Find Movies</button>
 </form>
-<app-movie-list [movieList]="popMovies"></app-movie-list>
+<app-movie-list [movieList]="movies"></app-movie-list>

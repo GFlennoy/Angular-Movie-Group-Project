@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
-  popMovies: any;
+  movies: any;
   constructor(
     private service: MovieService,
     private router: Router,
@@ -17,12 +17,28 @@ export class SearchCriteriaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.service.getPopularMovies().subscribe(response => {
-      console.log(response["results"]);
-      this.popMovies = response["results"];
+    this.route.queryParams.subscribe(response => {
+      if (response) {
+        this.service.getData(response).subscribe(response => {
+          this.movies = response["results"];
+        });
+      } else {
+        this.service.getPopularMovies().subscribe(response => {
+          console.log(response["results"]);
+          this.movies = response["results"];
+        });
+      }
     });
   }
-  searchMoviesBy(form: NgForm) {
+  searchMovies(form: NgForm) {
     console.log(form);
+    let parameters: any = {};
+    if (form.value.year) {
+      parameters.year = form.value.year;
+    }
+    if (form.value.rating) {
+      parameters.rating = form.value.rating;
+    }
+    this.router.navigate(["search-criteria"], { queryParams: parameters });
   }
 }
