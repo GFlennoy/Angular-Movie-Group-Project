@@ -1,1 +1,41 @@
-<p>search-criteria works!</p>
+<app-header></app-header>
+<h2>Search by:</h2>
+<form #addForm="ngForm" (ngSubmit)="searchMoviesBy(addForm)">
+  <label for="genre">Genre</label>
+  <select name="genre" id="genre" ngModel>
+    <option value="">Choose a genre</option>
+    <option value="action">Action</option>
+    <option value="drama">Drama</option>
+    <option value="adventure">Adventure</option>
+    <option value="comedy">Comedy</option>
+    <option value="animation">Crime</option>
+    <option value="documentary">Documentary</option>
+    <option value="family">Family</option>
+    <option value="fantasy">Fantasy</option>
+    <option value="science fiction">Science Fiction</option>
+    <option value="crime">Crime</option>
+    <option value="horror">Horror</option>
+    <option value="music">Music</option>
+    <option value="mystery">Mystery</option>
+    <option value="romance">Romance</option>
+    <option value="thriller">Thriller</option>
+    <option value="war">War</option>
+    <option value="western">Western</option>
+    <option value="history">History</option>
+    <option value="TV movie">TV movie</option>
+  </select>
+  <label for="rating">Rating</label>
+  <input
+    type="number"
+    name="rating"
+    id="rating"
+    placeholder="Enter 0-9"
+    min="0"
+    max="9"
+    ngModel
+  />
+  <label for="year">Year Released</label>
+  <input type="number" name="year" id="year" ngModel />
+  <button>Find Movies</button>
+</form>
+<app-movie-list [movieList]="popMovies"></app-movie-list>

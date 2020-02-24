@@ -1,1 +1,10 @@
-<p>movie-list works!</p>
+<div class="movies">
+  <div class="movie-container" *ngFor="let movie of movieList">
+    <h2>{{ movie.title }}</h2>
+    <img
+      src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
+      alt="movie-pic"
+    />
+    <button (click)="addToFavs(movie)"><i class="fas fa-heart"></i></button>
+  </div>
+</div>

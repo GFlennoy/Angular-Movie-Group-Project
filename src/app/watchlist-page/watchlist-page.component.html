@@ -1,1 +1,9 @@
-<p>watchlist-page works!</p>
+<app-header></app-header>
+<div class="watchlist" *ngFor="let movie of favorites">
+  <p>{{ movie.title }}</p>
+  <img
+    src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
+    alt="movie-pic"
+  />
+  <p>{{ movie.overview }}</p>
+</div>
