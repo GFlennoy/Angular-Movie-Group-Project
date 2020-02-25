@@ -8,6 +8,7 @@ export class MovieService {
   apiKey: string = "f0cd2889cde42e27b8c5aff4688f7b9b";
   favorites: any[] = [];
   dataGenres = [];
+  favIdList: any[] = [];
   constructor(private http: HttpClient) {}
   getPopularMovies() {
     return this.http.get("https://api.themoviedb.org/3/movie/popular?", {
@@ -41,5 +42,11 @@ export class MovieService {
     return this.http.get("https://api.themoviedb.org/3/discover/movie?", {
       params: parameters
     });
+  }
+  getFavId() {
+    return this.favIdList;
+  }
+  addFavID(id: any) {
+    this.favIdList.push(id);
   }
 }

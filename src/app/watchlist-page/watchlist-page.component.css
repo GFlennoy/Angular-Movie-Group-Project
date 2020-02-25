@@ -1,0 +1,26 @@
+img {
+  width: 200px;
+  height: 300px;
+}
+
+h1 {
+  width: 200px;
+  text-overflow: ellipsis;
+  text-decoration: underline lightgreen;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.header {
+  text-align: center;
+}
+
+.overview {
+  width: 200px;
+  height: 300px;
+}

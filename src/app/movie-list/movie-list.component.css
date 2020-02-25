@@ -5,6 +5,7 @@ img {
 h2 {
   width: 200px;
   text-overflow: ellipsis;
+  text-decoration: underline lightgreen;
   white-space: nowrap;
   overflow: hidden;
   color: white;
@@ -16,12 +17,16 @@ h2 {
   padding: 0px 20px;
 }
 .movie-container {
+  text-align: center;
+  margin: 0px 10px;
+  margin-top: 30px;
   position: relative;
   word-wrap: break-all;
   align-items: baseline;
 }
 img {
   border: 1px solid white;
+  border-radius: 10px;
 }
 button {
   position: absolute;
@@ -37,3 +42,18 @@ button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+.favorite {
+  color: lightgreen;
+}
+/* button:focus {
+  color: lightgreen;
+}
+:target {
+  color: lightgreen;
+} */
+/* .lightgreen {
+  color: lightgreen;
+}
+.red {
+  color: red;
+} */

@@ -1,9 +1,12 @@
 <app-header></app-header>
 <div class="watchlist" *ngFor="let movie of favorites">
-  <p>{{ movie.title }}</p>
+  <h1>{{ movie.title }}</h1>
   <img
     src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
     alt="movie-pic"
   />
-  <p>{{ movie.overview }}</p>
+  <p>Movie Overview</p>
+  <div class="overview">
+    <p>{{ movie.overview }}</p>
+  </div>
 </div>
