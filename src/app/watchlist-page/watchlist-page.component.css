@@ -1,26 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.watchlist {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 0;
+}
+
 img {
   width: 200px;
   height: 300px;
 }
 
+img {
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
 h1 {
+  text-align: center;
   width: 200px;
   text-overflow: ellipsis;
   text-decoration: underline lightgreen;
   white-space: nowrap;
   overflow: hidden;
   color: white;
+  margin-top: 0;
+}
+
+.headLine {
+  color: lightgreen;
+}
+.overview {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 300px;
 }
 
 p {
   color: white;
-}
-
-.header {
   text-align: center;
-}
-
-.overview {
-  width: 200px;
-  height: 300px;
 }

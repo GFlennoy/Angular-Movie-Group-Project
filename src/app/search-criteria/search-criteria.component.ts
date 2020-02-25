@@ -20,7 +20,6 @@ export class SearchCriteriaComponent implements OnInit {
   ngOnInit(): void {
     this.service.getGenres().subscribe(response => {
       this.genres = response["genres"];
-      console.log(response);
     });
 
     this.route.queryParams.subscribe(response => {

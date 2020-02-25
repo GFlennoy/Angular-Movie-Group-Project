@@ -28,7 +28,7 @@ img {
   border: 1px solid white;
   border-radius: 10px;
 }
-button {
+.heart {
   position: absolute;
   bottom: 0;
   padding: 5px;
@@ -45,15 +45,32 @@ button:active {
 .favorite {
   color: lightgreen;
 }
-/* button:focus {
+.info-popup {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.popup {
+  background-color: lightslategray;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 50vw;
+  border: 1px solid black;
+  border-radius: 5px;
+  justify-content: space-evenly;
+}
+.x {
+  background-color: lightslategray;
+  border: 1px solid black;
+}
+.fa-window-close {
   color: lightgreen;
 }
-:target {
-  color: lightgreen;
-} */
-/* .lightgreen {
-  color: lightgreen;
-}
-.red {
-  color: red;
-} */

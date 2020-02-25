@@ -20,9 +20,6 @@ export class MovieService {
       params: { api_key: this.apiKey }
     });
   }
-  addToFavs(favorite: any) {
-    this.favorites.push(favorite);
-  }
   getFavs() {
     return this.favorites;
   }
@@ -30,6 +27,9 @@ export class MovieService {
     let parameters: any = {
       api_key: this.apiKey
     };
+    // if (queryParams.title) {
+    //   parameters.title = queryParams.title;
+    // }
     if (queryParams.year) {
       parameters.year = queryParams.year;
     }
@@ -43,10 +43,16 @@ export class MovieService {
       params: parameters
     });
   }
-  getFavId() {
-    return this.favIdList;
+  setFavorites(favorites: any[]) {
+    this.favorites = favorites;
   }
-  addFavID(id: any) {
-    this.favIdList.push(id);
+  removeFav(index: number) {
+    this.favorites.splice(index, 1);
+  }
+  setIds(ids: any[]) {
+    this.favIdList = ids;
+  }
+  getIds() {
+    return this.favIdList;
   }
 }

@@ -1,12 +1,16 @@
 <app-header></app-header>
-<div class="watchlist" *ngFor="let movie of favorites">
-  <h1>{{ movie.title }}</h1>
-  <img
-    src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
-    alt="movie-pic"
-  />
-  <p>Movie Overview</p>
-  <div class="overview">
-    <p>{{ movie.overview }}</p>
+<div class="container">
+  <div class="watchlist" *ngFor="let movie of favorites">
+    <h1>{{ movie.title }}</h1>
+    <img
+      src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
+      alt="movie-pic"
+    />
+
+    <div class="overview">
+      <p class="headLine">Rating-{{ movie.vote_average }}</p>
+      <p class="headLine">Movie Overview</p>
+      <p>{{ movie.overview }}</p>
+    </div>
   </div>
 </div>

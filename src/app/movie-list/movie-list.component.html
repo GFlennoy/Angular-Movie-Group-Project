@@ -1,12 +1,23 @@
 <div class="movies">
-  <div class="movie-container" *ngFor="let movie of movieList">
+  <div class="movie-container" *ngFor="let movie of movieList; index as i">
     <h2 title="{{ movie.title }}">{{ movie.title }}</h2>
     <img
+      (click)="showInfo(i)"
       src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
       alt="movie-pic"
     />
-    <button (click)="addToFavs(movie)" (click)="toggleFavorite(movie)">
+    <button class="heart" (click)="toggleFavorite(movie)">
       <i class="fas fa-heart" [ngClass]="{ favorite: checkFav(movie) }"></i>
     </button>
+    <div class="info-popup" *ngIf="showIndex === i">
+      <div class="popup">
+        <h2>{{ movie.title }}</h2>
+        <p>Rating: {{ movie.vote_average }}</p>
+        <p>About: {{ movie.overview }}</p>
+        <button class="x">
+          <i class="fas fa-window-close"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
