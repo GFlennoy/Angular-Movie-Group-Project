@@ -47,6 +47,9 @@ export class SearchCriteriaComponent implements OnInit {
     if (form.value.genre) {
       parameters.genre = form.value.genre;
     }
+    // if(form.value.title){
+    //   parameters.title = form.value.title;
+    // }
     this.router.navigate(["search-criteria"], { queryParams: parameters });
   }
 }
