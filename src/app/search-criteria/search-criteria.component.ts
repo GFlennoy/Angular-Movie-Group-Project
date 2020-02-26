@@ -23,22 +23,31 @@ export class SearchCriteriaComponent implements OnInit {
     });
     this.route.queryParams.subscribe(response => {
       if (response) {
-        this.service.getData(response).subscribe(response => {
-          this.movies = response["results"];
-        });
+        if (response.title) {
+          this.service.getMovieTitles(response.title).subscribe(response => {
+            this.movies = response["results"];
+          });
+        } else {
+          this.service.getData(response).subscribe(response => {
+            this.movies = response["results"];
+          });
+        }
       } else {
         this.service.getPopularMovies().subscribe(response => {
-          console.log(response["results"]);
           this.movies = response["results"];
         });
       }
     });
   }
-  // this.service.getMovieTitles(response.keyword).subscribe(response => {
-  //   console.log(response);
-  // });
+
+  findMovieByTitle(form: NgForm) {
+    let parameters: any = {};
+    if (form.value.title) {
+      parameters.title = form.value.title;
+    }
+    this.router.navigate(["search-criteria"], { queryParams: parameters });
+  }
   searchMovies(form: NgForm) {
-    console.log(form);
     let parameters: any = {};
     if (form.value.year) {
       parameters.year = form.value.year;

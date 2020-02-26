@@ -67,7 +67,8 @@ button:active {
   width: 50vw;
   border: 1px solid black;
   border-radius: 5px;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   overflow-y: scroll;
 }
 .x {

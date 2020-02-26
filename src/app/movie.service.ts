@@ -22,7 +22,7 @@ export class MovieService {
   }
   getMovieTitles(title: string) {
     return this.http.get("https://api.themoviedb.org/3/search/movie?", {
-      params: { api_key: this.apiKey }
+      params: { api_key: this.apiKey, query: title }
     });
   }
   getFavs() {
@@ -36,7 +36,7 @@ export class MovieService {
       parameters.year = queryParams.year;
     }
     if (queryParams.rating) {
-      parameters.vote_average = queryParams.rating;
+      parameters["vote_average.gte"] = queryParams.rating;
     }
     if (queryParams.genre) {
       parameters.with_genres = queryParams.genre;
@@ -47,9 +47,6 @@ export class MovieService {
   }
   setFavorites(favorites: any[]) {
     this.favorites = favorites;
-  }
-  removeFav(index: number) {
-    this.favorites.splice(index, 1);
   }
   setIds(ids: any[]) {
     this.favIdList = ids;
