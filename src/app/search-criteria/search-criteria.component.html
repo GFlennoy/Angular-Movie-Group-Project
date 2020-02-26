@@ -1,9 +1,11 @@
 <app-header></app-header>
 <div>
   <h2>Search by:</h2>
-  <form #addForm="ngForm" (ngSubmit)="searchMovies(addForm)">
+  <form action="">
     <label for="title">Movie title</label>
     <input type="text" name="title" id="title" ngModel />
+  </form>
+  <form #addForm="ngForm" (ngSubmit)="searchMovies(addForm)">
     <label for="genre">Genre</label>
     <select name="genre" id="genre" ngModel>
       <option *ngFor="let genre of genres" value="{{ genre.id }}">{{

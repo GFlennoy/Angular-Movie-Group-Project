@@ -21,7 +21,6 @@ export class SearchCriteriaComponent implements OnInit {
     this.service.getGenres().subscribe(response => {
       this.genres = response["genres"];
     });
-
     this.route.queryParams.subscribe(response => {
       if (response) {
         this.service.getData(response).subscribe(response => {
@@ -35,6 +34,9 @@ export class SearchCriteriaComponent implements OnInit {
       }
     });
   }
+  // this.service.getMovieTitles(response.keyword).subscribe(response => {
+  //   console.log(response);
+  // });
   searchMovies(form: NgForm) {
     console.log(form);
     let parameters: any = {};
@@ -47,9 +49,6 @@ export class SearchCriteriaComponent implements OnInit {
     if (form.value.genre) {
       parameters.genre = form.value.genre;
     }
-    // if(form.value.title){
-    //   parameters.title = form.value.title;
-    // }
     this.router.navigate(["search-criteria"], { queryParams: parameters });
   }
 }

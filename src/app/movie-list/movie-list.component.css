@@ -56,7 +56,9 @@ button:active {
   top: 0;
   left: 0;
   z-index: 3;
+  overflow-y: scroll;
 }
+
 .popup {
   background-color: lightslategray;
   display: flex;
@@ -66,6 +68,7 @@ button:active {
   border: 1px solid black;
   border-radius: 5px;
   justify-content: space-evenly;
+  overflow-y: scroll;
 }
 .x {
   background-color: lightslategray;

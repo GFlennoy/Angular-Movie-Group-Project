@@ -8,6 +8,7 @@ import { MovieService } from "../movie.service";
 })
 export class MovieListComponent implements OnInit {
   isShow = false;
+  btnPopUp: any = this.isShow;
   toggle: boolean = true;
   status: string = "enable";
   favorites: any[] = [];
@@ -17,8 +18,9 @@ export class MovieListComponent implements OnInit {
   constructor(private service: MovieService) {}
 
   toggleDisplay() {
-    this.isShow = !this.isShow;
+    this.showIndex = null;
   }
+
   toggleFavorite(favorite: any) {
     if (this.favIds.includes(favorite.id)) {
       let index = this.favIds.findIndex(fav => {

@@ -20,6 +20,11 @@ export class MovieService {
       params: { api_key: this.apiKey }
     });
   }
+  getMovieTitles(title: string) {
+    return this.http.get("https://api.themoviedb.org/3/search/movie?", {
+      params: { api_key: this.apiKey }
+    });
+  }
   getFavs() {
     return this.favorites;
   }
@@ -27,9 +32,6 @@ export class MovieService {
     let parameters: any = {
       api_key: this.apiKey
     };
-    // if (queryParams.title) {
-    //   parameters.title = queryParams.title;
-    // }
     if (queryParams.year) {
       parameters.year = queryParams.year;
     }

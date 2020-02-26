@@ -19,7 +19,6 @@
         <div class="card-info">
           <p>Rating: {{ movie.vote_average }}</p>
           <p>About: {{ movie.overview }}</p>
-          <div *ngif="!isShow"></div>
           <button (click)="toggleDisplay()" class="x">
             <i class="fas fa-window-close"></i>
           </button>
