@@ -19,21 +19,23 @@
     <div class="info-popup" *ngIf="showIndex === i">
       <div class="popup">
         <h2 class="title-pop">{{ movie.title }}</h2>
-        <img
-          *ngIf="movie.poster_path"
-          src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
-          alt="movie-pic"
-        />
-        <img
-          *ngIf="!movie.poster_path"
-          (click)="showInfo(i)"
-          src="../../assets/jordanCrying.jpg"
-          alt="jordan"
-        />
-        <div class="card-info">
-          <p>Rating: {{ movie.vote_average }}</p>
-          <p>Release Date: {{ movie.release_date }}</p>
-          <p>About: {{ movie.overview }}</p>
+        <div class="main-pop-content">
+          <img
+            *ngIf="movie.poster_path"
+            src="https://image.tmdb.org/t/p/w1280{{ movie.poster_path }}"
+            alt="movie-pic"
+          />
+          <img
+            *ngIf="!movie.poster_path"
+            (click)="showInfo(i)"
+            src="../../assets/jordanCrying.jpg"
+            alt="jordan"
+          />
+          <div class="card-info">
+            <p>Rating: {{ movie.vote_average }}</p>
+            <p>Release Date: {{ movie.release_date }}</p>
+            <p>About: {{ movie.overview }}</p>
+          </div>
           <button (click)="toggleDisplay()" class="x">
             <i class="fas fa-window-close"></i>
           </button>
